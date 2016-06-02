@@ -1,5 +1,4 @@
 name: White Paper
-markdown: redcarpet
 pygments: true
 url: http://vinitkumar.me/white-paper
 paginate: 8
