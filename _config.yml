@@ -1,5 +1,4 @@
 name: White Paper
-markdown: redcarpet
 highlighter: true
 url: http://vinitkumar.me/white-paper
 gems: [jekyll-paginate,  jekyll-gist]
