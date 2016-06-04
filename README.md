@@ -12,6 +12,7 @@ structure.
 - Fork the project.
 - Change the fields in _config.yml.
 - Change the links in header.html.
+- Change the favicons in images/favicons and favico.ico.
 
 Test the website live while editing the code:
 
