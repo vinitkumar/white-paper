@@ -3,8 +3,13 @@ White Paper
 **White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for developers who also like
 to share code with their essays.
 
-#### Screenshot
-![Screenshot software]( "screenshot software")
+#### Screenshots
+
+![sc1](https://cldup.com/HiKXSy5pAr.png "screen1")
+
+![sc2](https://cldup.com/wKmYyj4CGM.png "screen2")
+
+![sc3](https://cldup.com/PnOO95ATKW.png "share")
 
 ## Download
 * [Version 1.0.0]()
@@ -13,7 +18,48 @@ to share code with their essays.
 
 This theme could be used in two ways: 
 
-- Clone this repo to your account, change the `_config.yml` file and add/remove/edit/delete the content in the `_posts` directory. It won't require you to install anything.
+- Clone this repo to your account, change the fields `_config.yml` file and add/edit/delete the content in the `_posts` directory. It won't require you to install anything on your machine.
+
+
+```yaml
+name: White Paper
+description: >
+    A simple jekyll theme aimed at programmers who like clean interface to write posts
+    and show off some code.
+about: >
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+
+url: ""
+baseurl: "" 
+markdown: kramdown
+highlighter: rouge
+
+gems: [jekyll-paginate,  jekyll-gist]
+
+paginate: 3
+
+logo:             logo.png
+disqus_shortname:
+
+owner:
+  name:           whitepaper
+  avatar:         ""
+  email:          ""
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  github:
+  stackexchange:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+```
 
 - Another way is to clone the project on your local machine and do the changes to the theme as per your choice. For this, follow the installation procedures next.
 
