@@ -7,7 +7,7 @@ about: >
 
 
 url: "http://vinitkumar.me/white-paper/"
-baseurl: "http://vinitkumar.me" 
+baseurl: "http://vinitkumar.me/white-paper/" 
 markdown: kramdown
 highlighter: rouge
 
