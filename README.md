@@ -12,7 +12,7 @@ to share code with their essays.
 ![sc3](https://cldup.com/PnOO95ATKW.png "share")
 
 ## Download
-* [Version 1.0.0]()
+* [Version 1.0.0](https://github.com/vinitkumar/white-paper/archive/gh-pages.zip)
 
 ## Usage
 
