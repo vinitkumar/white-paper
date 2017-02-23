@@ -1,21 +1,27 @@
 name: White Paper
-highlighter: true
-url: http://vinitkumar.me/white-paper
+description: >
+    A simple jekyll theme aimed at programmers who like clean interface to write posts
+    and show off some code.
+about: >
+    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+
+url: ""
+baseurl: "" 
+markdown: kramdown
+highlighter: rouge
+
 gems: [jekyll-paginate,  jekyll-gist]
-paginate: 8
-description:     Jekyll theme for Programmers
-intro: White Paper is a Jekyll theme most suited to be used on tech blogs that like their content to shine.
+
+paginate: 3
+
 logo:             logo.png
 disqus_shortname:
-# url: http://gotchacode.com
-#Comment out url when working locally to resolve base urls correctly
-#url:
 
-# Owner/author information
 owner:
-  name:           <your-name-here>
-  avatar:         <avatar-image-link>
-  email:          <your-email-address>
+  name:           whitepaper
+  avatar:         ""
+  email:          ""
   # Social networking links used in footer. Update and remove as you like.
   twitter:
   github:
@@ -28,6 +34,3 @@ google_analytics:
 google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
-
-# Links to include in top navigation
-# For external links add external: true

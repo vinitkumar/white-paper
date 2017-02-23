@@ -30,3 +30,20 @@ I love reading books. I have bought quite some books in the past 11 months. I
 have so much to read and learn from these gems. I have done good progress in
 completing some of these. Hoping to cover more in the near future.
 
+{% highlight python %}
+from __future__ import absolute_import
+
+import os
+
+from celery import Celery
+from django.conf import settings  # noqa
+
+app = Celery('DumpGood')
+
+# Using a string here means the worker will not have to
+# pickle the object when using Windows.
+app.config_from_object('django.conf:settings')
+app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+{% endhighlight %}
+
+
