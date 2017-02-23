@@ -1,0 +1,15 @@
+{
+  "name": "white-paper",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "7.5.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.14.0"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1"
+  }
+}
