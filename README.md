@@ -4,11 +4,16 @@
 
 ## How to use White Paper
 
-Fork the repo to your account click here: [Fork White Paper](https://github.com/vinitkumar/white-paper#fork-destination-box)
+Fork the repo to your account click here by clicking the button on the top right as shown in the image:
+
+![fork](https://cldup.com/vOF0oaUkh5-3000x3000.png) and then where you want to fork it as shown below.
+
+![fork-repo](https://cldup.com/QMGPJDlayN-3000x3000.png)
 
 Next, Go the the project settings and change the repository name to `<username>.github.io` where username is your username.
 
 Change these entries in the `_config.yml` file:
+
 
 ```yml
 master_repo: false
