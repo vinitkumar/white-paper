@@ -14,6 +14,16 @@ Next, Go the the project settings and change the repository name to `<username>.
 
 Change these entries in the `_config.yml` file:
 
+Also, change this line in head.html [link](https://github.com/vinitkumar/white-paper/blob/9ad021a8f94c6240351bd57eda301b5f207e554e/_includes/head.html#L28)
+
+```html
+<!-- From this -->
+<link rel="stylesheet" href=" {{ '/css/main.min.css' | relative_url }}" type="text/css" />
+<!-- To this -->
+<link rel="stylesheet" href=" {{ '/css/main.min.css' | absolute_url }}" type="text/css" />
+
+```
+This will make sure that the path of CSS is correct and the theme loads correctly.
 
 ```yml
 master_repo: false
@@ -74,6 +84,17 @@ concat: {
   }
 }
 ```
+
+# White Paper in Action
+
+- Home page
+
+![home](https://cldup.com/Ml53I1dCm4-3000x3000.png)
+
+
+- Post Detail View
+
+![post detail](https://cldup.com/T9R_1bU8BM-3000x3000.png)
 
 ## License 
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
