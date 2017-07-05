@@ -4,7 +4,7 @@
 
 ## How to use White Paper
 
-Fork the repo to your account click here by clicking the button on the top right as shown in the image:
+Fork the repo to your account by clicking the button on the top right as shown in the image:
 
 ![fork](https://cldup.com/vOF0oaUkh5-3000x3000.png) and then where you want to fork it as shown below.
 
