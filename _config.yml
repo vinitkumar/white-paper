@@ -7,11 +7,11 @@ about: >
 
 
 url: "http://vinitkumar.me/white-paper"
-baseurl: "/white-paper" 
+baseurl: "/white-paper"
 markdown: kramdown
 highlighter: rouge
 
-gems: [jekyll-paginate,  jekyll-gist]
+plugins: ['jekyll-paginate', 'jekyll-gist']
 
 paginate: 3
 
