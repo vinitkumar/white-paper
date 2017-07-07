@@ -4,7 +4,7 @@ description: >
 about: >
     Sayid.so coming soon
 
-master_repo: true
+master_repo: false
 url: "http://sayid.so/sayid.so"
 markdown: kramdown
 highlighter: rouge
