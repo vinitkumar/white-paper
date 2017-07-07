@@ -21,7 +21,7 @@ owner:
   avatar:         ""
   email:          ""
   # Social networking links used in footer. Update and remove as you like.
-  twitter:@sayidcalawi
+  twitter:
   github:
   stackexchange:
   # For Google Authorship https://plus.google.com/authorship
