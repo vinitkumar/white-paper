@@ -5,7 +5,7 @@ about: >
     Welcome to sayid.so, coming soon. Kusoo dhawaada sayid.so, mar-dhaw ayaanu soo daawici doona.
 
 master_repo: true
-url: "http://sayid.so/sayid.so"
+url: "http://sayid.so"
 markdown: kramdown
 highlighter: rouge
 
