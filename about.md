@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Vinit Kumar
+title: Sayid.so
 ---
 
 {{site.about}}
