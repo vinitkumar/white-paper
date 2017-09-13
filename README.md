@@ -8,7 +8,7 @@ Fork the repo to your account by clicking the button on the top right as shown i
 
 ![fork](https://cldup.com/vOF0oaUkh5-3000x3000.png) and then where you want to fork it as shown below.
 
-![fork-repo](https://cldup.com/QMGPJDlayN-3000x3000.png)
+<img src="https://cldup.com/QMGPJDlayN-3000x3000.png" height="300" width="300">
 
 Next, Go the the project settings and change the repository name to `<username>.github.io` where username is your username.
 
@@ -107,3 +107,5 @@ concat: {
 * Homepage: http://vinitkumar.me
 * e-mail: vinit1414.08@bitmesra.ac.in
 * Twitter: [@vinitkme](https://twitter.com/vinitkme "vinitkme on twitter")
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/uyhQ2YHmpDTZbNRraFXJEvTa/vinitkumar/white-paper'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/uyhQ2YHmpDTZbNRraFXJEvTa/vinitkumar/white-paper.svg' /></a>
