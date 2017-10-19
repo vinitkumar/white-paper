@@ -16,12 +16,23 @@ module.exports = function(grunt) {
     cssmin: {
       'css/main.min.css': [
         '<%= concat.dist.dest %>'
+      ],
+      'css/main.min.rtl.css': [
+        '<%= rtlcss.rtl.dest %>'
       ]
+    },
+
+    rtlcss: {
+      rtl: {
+        src: '<%= concat.dist.dest %>',
+        dest: 'css/<%= pkg.name %>.add.rtl.css'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.registerTask('default', ['concat', 'cssmin']);
-  grunt.registerTask('css', ['concat', 'cssmin']);
+  grunt.loadNpmTasks('grunt-rtlcss');
+  grunt.registerTask('default', ['concat', 'rtlcss', 'cssmin']);
+  grunt.registerTask('css', ['concat', 'rtlcss', 'cssmin']);
 };
