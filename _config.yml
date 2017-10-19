@@ -17,6 +17,7 @@ paginate: 3
 logo:             logo.png
 disqus_shortname:
 
+rtl: false
 owner:
   name:           whitepaper
   avatar:         ""

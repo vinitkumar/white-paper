@@ -2,8 +2,8 @@
   <header>
       <ul class="nav">
         <!--Change the  URL here if working on an absolute domain-->
-        <li><a href="{{ site.url }}"><span class="mega-octicon octicon-terminal" style="margin-right: 6px;"></span>Home</a></li>
-        <li><a href="{{ site.url }}/about"><span class="mega-octicon octicon-person" style="margin-right: 6px;"></span>About</a></li>
+        <li><a href="{{ site.url }}"><span class="mega-octicon octicon-terminal" style="margin-{% if site.rtl %}left{% else %}right{% endif %}: 6px;"></span>Home</a></li>
+        <li><a href="{{ site.url }}/about"><span class="mega-octicon octicon-person" style="margin-{% if site.rtl %}left{% else %}right{% endif %}: 6px;"></span>About</a></li>
       </ul>
   </header>
 </div>
