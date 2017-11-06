@@ -10,21 +10,22 @@ url: "http://vinitkumar.me/white-paper"
 markdown: kramdown
 highlighter: rouge
 
-plugins: ['jekyll-paginate', 'jekyll-gist']
+plugins: ['jekyll-paginate', 'jekyll-gist', 'jekyll-octicons', 'jekyll-feed']
 
-paginate: 3
+paginate: 4
 
 logo:             logo.png
 disqus_shortname:
 
 owner:
   name:           whitepaper
-  avatar:         ""
-  email:          ""
+  avatar:         "https://avatars1.githubusercontent.com/u/537678?s=240&v=4"
+  email:          "vinit1414.08@bitmesra.ac.in"
   # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  github:
-  stackexchange:
+  twitter: vinitkme
+  github: https://github.com/vinitkumar
+  stackexchange: https://stackoverflow.com/users/859112/vinit-kumar?tab=profile
+  linkedin: https://www.linkedin.com/in/vinitatlinkedin
   # For Google Authorship https://plus.google.com/authorship
   google_plus:
 
