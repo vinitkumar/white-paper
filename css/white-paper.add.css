@@ -489,6 +489,10 @@ code.html span.doctype {
   margin-right: 6px;
 }
 
+
+.owner-name {
+  margin-left: 0;
+}
 /* @end */
 
 .highlight .hll { background-color: #ffffcc }
