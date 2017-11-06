@@ -10,7 +10,7 @@ url: "http://vinitkumar.me/white-paper"
 markdown: kramdown
 highlighter: rouge
 
-plugins: ['jekyll-paginate', 'jekyll-gist', 'jekyll-octicons', 'jekyll-feed']
+plugins: ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed']
 
 paginate: 4
 
