@@ -8,8 +8,6 @@ Fork the repo to your account by clicking the button on the top right as shown i
 
 ![fork](https://cldup.com/vOF0oaUkh5-3000x3000.png) and then where you want to fork it as shown below.
 
-<img src="https://cldup.com/QMGPJDlayN-3000x3000.png" height="300" width="300">
-
 Next, Go the the project settings and change the repository name to `<username>.github.io` where username is your username.
 
 Change these entries in the `_config.yml` file:
@@ -23,11 +21,14 @@ Also, change this line in head.html [link](https://github.com/vinitkumar/white-p
 <link rel="stylesheet" href=" {{ '/css/main.min.css' | absolute_url }}" type="text/css" />
 
 ```
+
+
 This will make sure that the path of CSS is correct and the theme loads correctly.
 
 ```yml
 master_repo: false
 url: "<username>.github.io"
+rtl: false  # change to true if posts is in Arabic/other Right to left language.
 ```
 Also, change all other fields in the `_config.yml` file to your choice.
 
@@ -89,12 +90,19 @@ concat: {
 
 - Home page
 
-![home](https://cldup.com/Ml53I1dCm4-3000x3000.png)
+![home](https://cldup.com/AN-7_xCJ1v.png)
 
+- Profile View
+
+![profile](https://cldup.com/dQuyC70TzS.png)
 
 - Post Detail View
 
-![post detail](https://cldup.com/T9R_1bU8BM-3000x3000.png)
+![post detail](https://cldup.com/09Ay9MIPZ4.png)
+
+- RTL Support (For Arabic blogs)
+
+![RTL](https://cldup.com/84vnCOsI6c-3000x3000.png)
 
 ## License 
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
