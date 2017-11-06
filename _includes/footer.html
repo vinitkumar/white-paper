@@ -2,6 +2,15 @@
 {% if paginator %}
 <!-- Pagination links -->
 <div class="pagination">
+  {% if site.owner.linkedin %}
+    <a href="{{ site.owner.linkedin }}" class="social-media-icons"><i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if site.owner.twitter %}  
+    <a href="{{ site.owner.twitter }}" class="social-media-icons"><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if site.owner.github %}  
+    <a href="{{ site.owner.github }}" class="social-media-icons"><i class="fa fa-2x fa-github-square" aria-hidden="true"></i></a>
+  {% endif %}  
   {% if paginator.next_page %}
     <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px;"></span></a>
   {% else %}
