@@ -26,3 +26,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="{{ '/css/font-awesome.min.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/css/main.min.css' | relative_url }}" type="text/css" />
+
+
+{% if site.rtl %}
+<link rel="stylesheet" href=" {{ '/css/main.min.rtl.css' | relative_url }}" type="text/css" />
+<style>
+    .highlight pre {
+        direction: ltr;
+    }
+</style>
+{% else %}
+<link rel="stylesheet" href=" {{ '/css/main.min.css' | relative_url }}" type="text/css" />
+{% endif %}

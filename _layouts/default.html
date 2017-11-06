@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+{% if site.rtl %}
+<html dir="rtl">
+{% else %}
 <html>
+{% endif %}
 <head>
   {% include head.html %}
 </head>
