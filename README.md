@@ -115,5 +115,3 @@ concat: {
 * Homepage: http://vinitkumar.me
 * e-mail: vinit1414.08@bitmesra.ac.in
 * Twitter: [@vinitkme](https://twitter.com/vinitkme "vinitkme on twitter")
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/uyhQ2YHmpDTZbNRraFXJEvTa/vinitkumar/white-paper'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/uyhQ2YHmpDTZbNRraFXJEvTa/vinitkumar/white-paper.svg' /></a>
