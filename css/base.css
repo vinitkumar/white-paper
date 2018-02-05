@@ -7,7 +7,6 @@
   margin:0;
 }
 h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, ul, ol, dl, fieldset, address { margin:1em 0; }
-li, dd { margin-left:5%; }
 fieldset { padding: .5em; }
 select option{ padding:0 5px; }
 
@@ -31,13 +30,37 @@ a img{ border:none; }
   Main Layout
 ----------------------------------------------------------------------------*/
 
+@font-face {
+    font-family: AvenirLTStd;
+    font-style: normal;
+    src: url("AvenirLTStd-Book.otf") format("opentype");
+    font-display: swap;
+}
+
 body {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 17px;
-  line-height: 1.4;
+  font-family: "AvenirLTStd", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 14.5px;
   color: #333;
   text-shadow: 0 1px 0 rgba(255,255,255,1.0);
-  border-top: 4px solid #556270;
+}
+
+p {
+  color: #222;
+  font-size: 19px;
+}
+
+a.top-link {
+  color: black;
+  margin-top: 40px;
+  font-size: 60px;
+  text-decoration: none;
+}
+
+a.top-link:hover {
+  margin-top: 40px;
+  color: black;
+  font-size: 60px;
+  text-decoration: none;
 }
 
 strong {
@@ -65,8 +88,18 @@ hr:before {
 }
 
 .container {
+  width: 60%;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+
+@media(max-width: 768px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 }
 
 .header-container {
@@ -74,19 +107,16 @@ hr:before {
 }
 
 header {
-  margin: 0 0 20px 0;
+  margin: 20px 0 20px 0;
   /* text-align: right; */
 }
 
 ul.nav {
-  background-color: #eee;
   margin: 0;
-  padding: 12px 0 10px 0;
+  padding: 8px 0 8px 0;
   list-style-type: none;
-  line-height: 30px;
 }
 ul.nav li {
-  margin: 0 20px;
   display: inline-block;
   text-transform: uppercase;
   font-size: 18px;
@@ -109,7 +139,8 @@ ul.nav li {
   }
 }
 ul.nav li a {
-  color: #000;
+  color: black;
+  margin-right: 10px;
   text-decoration: none;
   font-weight: lighter;
 }
@@ -158,8 +189,13 @@ ul.nav li.logo a {
 }
 
 .listing .post h2 a {
-  color: #55acee;
+  color: #000;
   text-decoration: none;
+  font-size: 40px;
+}
+
+.listing .post h2 i {
+  font-size: 40px;
 }
 
 .listing .post .post-summary {
@@ -177,14 +213,13 @@ ul.nav li.logo a {
   font-weight: lighter;
 }
 .listing .post.other h2 a {
-  color: #55acee;
+  color: #000;
 }
 .listing .post.other p:last-child {
   margin-bottom: 0;
 }
 
 .listing .post.other .icon {
- font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   float: left;
   margin-top: -3px;
   margin-left: -35px;
@@ -226,7 +261,6 @@ p.date {
 }
 
 p.intro {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 32px;
   line-height: 1.2;
   text-align: justify;
@@ -430,7 +464,6 @@ pre {
 }
 code{
   padding: 0 4px;
-  font-family: "Source Code Pro", "Courier New", Courier, sans-serif;
   font-size: 0.9em;
   color: #556270;
   background: #F4FAFF;
@@ -487,6 +520,7 @@ code.html span.doctype {
 .social-media-icons  {
   float: left;
   margin-right: 6px;
+  color: black;
 }
 
 

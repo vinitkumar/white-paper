@@ -7,12 +7,13 @@ module.exports = function(grunt) {
         src: [
           'css/base.css',
           'css/syntax/emacs.css',
-          'css/octicons.css'
+          'css/octicons.css',
+          'css/font-awesome.min.css'
         ],
         dest: 'css/<%= pkg.name %>.add.css'
       }
     },
-    
+
     cssmin: {
       'css/main.min.css': [
         '<%= concat.dist.dest %>'

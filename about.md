@@ -8,7 +8,6 @@ title: About Vinit Kumar
 
 {{site.about}}
 
-
 <div class="pagination">
   {% if site.owner.linkedin %}
     <a href="{{ site.owner.linkedin }}" class="social-media-icons"><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></a>

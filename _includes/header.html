@@ -1,11 +1,14 @@
-<div class="header-container">
+<div class="header-container container">
   <header>
+    <a href="/" class="top-link">{{ site.name }}</a>
       <ul class="nav">
         <!--Change the  URL here if working on an absolute domain-->
-        <li><a href="{{ site.url }}"><i class="fa fa-home" aria-hidden="true" style="margin-{% if site.rtl %}left{% else %}right{% endif %}: 6px;"></i>Home</a></li>
-        <li><a href="{{ site.url }}/about"><i class="fa fa-user" aria-hidden="true" style="margin-{% if site.rtl %}left{% else %}right{% endif %}: 6px;"></i>About</a></li>
-        <li><a href="{{ site.owner.github }}" target="_blank"><i class="fa fa-terminal" aria-hidden="true" style="margin-{% if site.rtl %}left{% else %}right{% endif %}: 6px;"></i>Projects</a></li>
-        <li><a href="{{ site.url }}/feed.xml"><i class="fa fa-rss" aria-hidden="true" style="margin-{% if site.rtl %}left{% else %}right{% endif %}: 6px;"></i>RSS</a></li>
+        <li><a href="{{ site.url }}">Home</a></li>
+        <li><a href="{{ site.url }}/about">About</a></li>
+        {% if site.owner.github %}
+          <li><a href="{{ site.owner.github }}" target="_blank">Projects</a></li>
+        {% endif %}
+        <li><a href="{{ site.url }}/feed.xml">RSS</a></li>
       </ul>
   </header>
 </div>
