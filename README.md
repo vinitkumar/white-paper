@@ -101,7 +101,7 @@ concat: {
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
 
 ## Version
-* Version 2.1.0
+* Version 4.0.0
 
 ## Contact
 #### Developer
