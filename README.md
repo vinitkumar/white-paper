@@ -2,6 +2,17 @@
 
 **White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for writers/developers who also like to share code with their essays.
 
+# White Paper in Action
+
+- Home page
+
+![home](https://cldup.com/FRewyA-EEI-3000x3000.png)
+
+
+- Post Detail View
+
+![post detail](https://cldup.com/mERDZPBshM-3000x3000.png)
+
 ## How to use White Paper
 
 Fork the repo to your account by clicking the button on the top right as shown in the image:
@@ -85,18 +96,6 @@ concat: {
   }
 }
 ```
-
-# White Paper in Action
-
-- Home page
-
-![home](https://cldup.com/FRewyA-EEI-3000x3000.png)
-
-
-- Post Detail View
-
-![post detail](https://cldup.com/mERDZPBshM-3000x3000.png)
-
 
 ## License
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
