@@ -50,7 +50,7 @@ sudo npm install -g grunt-cli  #to get the task runner for grunt.
 bundle install
 jekyll serve
 
-# on running the serve script, the site will be live on 
+# on running the serve script, the site will be live on
 http://127.0.0.1:4000
 ```
 This theme uses grunt to concat & minify the css for best performance. In order to prepare the css build. Run `grunt`
@@ -90,28 +90,23 @@ concat: {
 
 - Home page
 
-![home](https://cldup.com/AN-7_xCJ1v.png)
+![home](https://cldup.com/FRewyA-EEI-3000x3000.png)
 
-- Profile View
-
-![profile](https://cldup.com/dQuyC70TzS.png)
 
 - Post Detail View
 
-![post detail](https://cldup.com/09Ay9MIPZ4.png)
+![post detail](https://cldup.com/mERDZPBshM-3000x3000.png)
 
-- RTL Support (For Arabic blogs)
 
-![RTL](https://cldup.com/84vnCOsI6c-3000x3000.png)
-
-## License 
+## License
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
 
-## Version 
+## Version
 * Version 2.1.0
 
 ## Contact
 #### Developer
+
 * Homepage: http://vinitkumar.me
 * e-mail: vinit1414.08@bitmesra.ac.in
 * Twitter: [@vinitkme](https://twitter.com/vinitkme "vinitkme on twitter")
