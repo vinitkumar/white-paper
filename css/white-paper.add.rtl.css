@@ -215,6 +215,9 @@ ul.nav li.logo a {
 .listing .post.other h2 a {
   color: #000;
 }
+.listing .post.other h2 a:hover {
+  color: deepskyblue;
+}
 .listing .post.other p:last-child {
   margin-bottom: 0;
 }
