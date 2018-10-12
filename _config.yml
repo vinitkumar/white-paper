@@ -1,9 +1,9 @@
-name: White Paper
+name: Riyoth Blog
 description: >
-    A simple jekyll theme aimed at programmers who like clean interface to write posts
-    and show off some code.
+    This is my blog. Here, I will write about my project, experiment and idea. The goal is first to
+    help me remember all the thing and Second to help and inspire other people. 
 about: >
-    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    
 
 master_repo: false
 url: "http://riyoth.github.io"
@@ -20,18 +20,18 @@ disqus_shortname:
 rtl: false
 owner:
   name:           whitepaper
-  avatar:         "https://avatars1.githubusercontent.com/u/537678?s=240&v=4"
+  avatar:         "https://avatars2.githubusercontent.com/u/952912?s=400&v=4"
   email:          "poclement+blog@riyoth.ca"
   # Social networking links used in footer. Update and remove as you like.
-  twitter: vinitkme
+  twitter: Riyoth42
   github: https://github.com/riyoth
-  stackexchange: https://stackoverflow.com/users/859112/vinit-kumar?tab=profile
+  stackexchange: 
   linkedin: https://www.linkedin.com/in/poclement
   # For Google Authorship https://plus.google.com/authorship
   google_plus:
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:
+google_analytics: UA-127442593-1
 google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
