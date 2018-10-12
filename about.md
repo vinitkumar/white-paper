@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Vinit Kumar
+title: About Pier-Olivier Clement
 ---
 
 <h1 class="owner-name">{{ site.owner.name}} </h1>
