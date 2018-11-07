@@ -3,7 +3,7 @@ layout: default
 title: About Pier-Olivier Clement
 ---
 
-<h1 class="owner-name">{{ site.owner.name}} </h1>
+<h1 class="owner-name">About {{ site.owner.name}} </h1>
 
 {{site.about}}
 

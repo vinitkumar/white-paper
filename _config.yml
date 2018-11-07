@@ -1,7 +1,12 @@
 name: Riyoth's Blog
 description: >
     This is my blog, I  write about my project, experiment and idea.
-about: > 
+about: | 
+  I'm a sysadmin/network admin with a strong desire to automate all the thing. My favorite tool to automate stuff Python and Ansible. Most of the time I work with Debian linux, Cisco, Juniper and Fortinet equipement.
+  
+  I've started this blog to write about my project and experimentation. I will cover my work at [DreamHack Canada](http://dreamhack.ca), [CS Games](https://csgames.org) and other personnal project.
+
+  Feel free to contact me by email or any of the following social media.
     
 
 master_repo: false
