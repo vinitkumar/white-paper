@@ -2,6 +2,10 @@
 
 **White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for writers/developers who also like to share code with their essays.
 
+## Note: Dark Paper out now
+
+> Inspired by MacOS dark mode, a new dark theme is out now. Check out [Dark Paper github](https://github.com/vinitkumar/dark-paper) and it's live demo here: [dark paper website](https://vinitkumar.me/dark-paper)
+
 # White Paper in Action
 
 - Home page
