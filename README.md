@@ -8,14 +8,13 @@
 
 # White Paper in Action
 
-- Home page
+### Home page
 
-![home](https://cldup.com/FRewyA-EEI-3000x3000.png)
+![home](https://cldup.com/nAr0lOBTTJ.png)
 
+### Post Detail View
 
-- Post Detail View
-
-![post detail](https://cldup.com/mERDZPBshM-3000x3000.png)
+![post detail](https://cldup.com/kP54KLISpn-3000x3000.png)
 
 ## How to use White Paper
 
