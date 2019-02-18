@@ -30,15 +30,8 @@ a img{ border:none; }
   Main Layout
 ----------------------------------------------------------------------------*/
 
-@font-face {
-    font-family: AvenirLTStd;
-    font-style: normal;
-    src: url("AvenirLTStd-Book.otf") format("opentype");
-    font-display: swap;
-}
-
 body {
-  font-family: "AvenirLTStd", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: 'Zilla Slab', serif;
   font-size: 14.5px;
   color: #333;
   text-shadow: 0 1px 0 rgba(255,255,255,1.0);
@@ -53,6 +46,7 @@ a.top-link {
   color: black;
   margin-top: 40px;
   font-size: 60px;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -143,7 +137,7 @@ ul.nav li a {
   color: deepskyblue;
   margin-right: 10px;
   text-decoration: none;
-  font-weight: lighter;
+  font-weight: 600;
 }
 ul.nav li a:hover {
   color: #2382c8;
@@ -171,11 +165,11 @@ ul.nav li.logo a {
 ------------------------------------------------------------------------------*/
 
 .listing {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .listing .post {
-  margin: 60px 0;
+  margin: 40px 0;
 }
 .listing .post:first-child {
   margin-top: 22px;
@@ -196,7 +190,8 @@ ul.nav li.logo a {
   /* color: #2382c8; */
   color: deepskyblue;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 30px;
+  font-weight: 500;
 }
 
 .listing .post h2 i {
@@ -305,8 +300,7 @@ h1.link .desc {
 }
 
 h2 {
-  margin: 2.0em 0 -0.5em 0;
-  font-size: 20px;
+  font-size: 30px;
   color: #000;
 }
 
@@ -537,6 +531,9 @@ code.html span.doctype {
   margin-left: 0;
 }
 /* @end */
+.user-avatar {
+  border-radius: 12px;
+}
 
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
