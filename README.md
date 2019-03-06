@@ -2,6 +2,26 @@
 
 **White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for writers/developers who also like to share code with their essays.
 
+## Create blog posts
+
+`jekyll-compose` gem is now installed with jekyll so now creating a new post is as easy as running this simple command
+
+```
+# ensure all the required bundles are installed
+bundle install
+bundle exec jekyll post "Tooling Considered Harmful"
+
+Configuration file: /Users/vinitkumar/projects/vinitkumar.github.com/_config.yml
+New post created at _posts/2019-03-06-tooling-considered-harmful.md
+
+$ git status
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+  _posts/2019-03-06-tooling-considered-harmful.md
+```
+
 ## Note: Dark Paper out now
 
 > Inspired by MacOS dark mode, a new dark theme is out now. Check out [Dark Paper github](https://github.com/vinitkumar/dark-paper) and it's live demo here: [dark paper website](https://vinitkumar.me/dark-paper)
