@@ -26,15 +26,20 @@ Untracked files:
 
 > Inspired by MacOS dark mode, a new dark theme is out now. Check out [Dark Paper github](https://github.com/vinitkumar/dark-paper) and it's live demo here: [dark paper website](https://vinitkumar.me/dark-paper)
 
-# White Paper in Action
+## White Paper in Action
 
-### Home page
+#### Blog Page
 
-![home](https://cldup.com/nAr0lOBTTJ.png)
+![home](https://cldup.com/_wW4XyaFRp.png)
 
-### Post Detail View
+#### Detail Page
 
-![post detail](https://cldup.com/kP54KLISpn-3000x3000.png)
+![post detail](https://cldup.com/4JownXxgqT-3000x3000.png)
+
+#### About Page
+
+![about](https://cldup.com/oIZoELPfCO.png)
+
 
 ## How to use White Paper
 
