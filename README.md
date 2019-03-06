@@ -1,6 +1,10 @@
 # White Paper
 
-**White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for writers/developers who also like to share code with their essays.
+**White Paper** is a theme for Jekyll. It is made keeping content in focus and is best for writers/developers who also like to share code with their essays.
+
+It is also one of the fastest jekyll theme out there with a 100 score on pagespeed insights. 
+
+![pagespeed-insights](https://cldup.com/ekLMXi9-Hq.png)
 
 ## Create blog posts
 
