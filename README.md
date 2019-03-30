@@ -35,6 +35,7 @@ Untracked files:
 #### Blog Page
 
 ![home](https://cldup.com/_wW4XyaFRp.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_shield)
 
 #### Detail Page
 
@@ -131,6 +132,9 @@ concat: {
 
 ## License
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_large)
 
 ## Version
 * Version 4.0.0
