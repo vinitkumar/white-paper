@@ -1,6 +1,10 @@
 # White Paper
 
-**White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for writers/developers who also like to share code with their essays.
+**White Paper** is a theme for Jekyll. It is made keeping content in focus and is best for writers/developers who also like to share code with their essays.
+
+It is also one of the fastest jekyll theme out there with a 100 score on pagespeed insights. 
+
+![pagespeed-insights](https://cldup.com/ekLMXi9-Hq.png)
 
 ## Create blog posts
 
@@ -31,6 +35,7 @@ Untracked files:
 #### Blog Page
 
 ![home](https://cldup.com/_wW4XyaFRp.png)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_shield)
 
 #### Detail Page
 
@@ -127,6 +132,9 @@ concat: {
 
 ## License
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_large)
 
 ## Version
 * Version 4.0.0
