@@ -1,0 +1,138 @@
+I"I<p>This blog post covers a very simple, light weight, yet flexible state machine framework in C# .Net.</p>
+
+<p><a href="https://github.com/mubeenh/SSM">Souce code on Github</a></p>
+
+<p><a href="https://www.nuget.org/packages/SSM/">Download NuGet package</a></p>
+
+<h2 id="concept">Concept</h2>
+
+<p><strong>State :</strong> The state of a stateful entity. Represented by <code>IState</code></p>
+
+<p><strong>Stateful entity :</strong> An entity that has a defined state. Represented by <code>IStatefulEntity</code></p>
+
+<p><strong>Context :</strong> A context in which a state machine executes a transition. It is simply a set of configuration and data that governs the execution of a state machine. Represented by <code>IStateMachineContext</code></p>
+
+<p><strong>Transition handler :</strong> A component that handles a transition of a stateful entity between a source state to target state. Represented by <code>ITransitionHandler</code></p>
+
+<h2 id="usage">Usage</h2>
+
+<p>Start by creating an entity that represents a state.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">ServiceTicketState</span> <span class="p">:</span> <span class="n">IState</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Code</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    
+</code></pre></div></div>
+
+<p>Now, create a stateful entity by implementing <code>IStatefulEntity</code> interface. For exmaple:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="k">class</span> <span class="nc">ServiceTicket</span> <span class="p">:</span> <span class="n">IStatefulEntity</span><span class="p">&lt;</span><span class="n">ServiceTicketState</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="n">ServiceTicketState</span> <span class="n">State</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next comes transition handlers. A transition hadler is created by implementing <code>ITransitionHandler</code> interface. Below is an example of a generic transition handler that can be used to abstract common functionalities in our Service Ticket example.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">GenericTransitionHandler</span> <span class="p">:</span> <span class="n">ITransitionHandler</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">virtual</span> <span class="kt">string</span> <span class="n">TransitionKey</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">ServiceTicket</span> <span class="nf">Execute</span><span class="p">(</span><span class="n">ServiceTicket</span> <span class="n">entity</span><span class="p">,</span> <span class="n">ServiceTicketState</span> <span class="n">nextState</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">argumentsMap</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">entity</span><span class="p">.</span><span class="n">State</span> <span class="p">=</span> <span class="n">nextState</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">entity</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="n">ServiceTicket</span> <span class="nf">ValidateTransition</span><span class="p">(</span><span class="n">ServiceTicket</span> <span class="n">entity</span><span class="p">,</span> <span class="n">ServiceTicketState</span> <span class="n">nextState</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">argumentsMap</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">entity</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">BeforeTransition</span><span class="p">(</span><span class="n">ServiceTicket</span> <span class="n">entity</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">argumentsMap</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">AfterTransition</span><span class="p">(</span><span class="n">ServiceTicket</span> <span class="n">entity</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">argumentsMap</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Next and final step is to create a ‘context’ by implementing <code>IStateMachineContext</code> interface. This interface declares following methods that need to be implemented to create a context.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ICollection</span><span class="p">&lt;</span><span class="n">StateTransition</span><span class="p">&gt;</span> <span class="nf">GetTransitions</span><span class="p">();</span>
+<span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ITransitionHandler</span><span class="p">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">M</span><span class="p">&gt;&gt;</span> <span class="nf">GetTransitionHandlersMap</span><span class="p">();</span>
+<span class="n">ICollection</span><span class="p">&lt;</span><span class="n">M</span><span class="p">&gt;</span> <span class="nf">AllStates</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>Implementation approach is left to the user. It could from just hard coding for simple cases to database backed storage and retrieval for more advanced cases.</p>
+
+<p>Here is an example implementation (hard coded for simplicity)</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">StateTransition</span><span class="p">&gt;</span> <span class="nf">GetTransitions</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">StateTransition</span><span class="p">&gt;</span> <span class="n">map</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">StateTransition</span><span class="p">&gt;();</span>
+            <span class="c1">// Define all possible transitions, and its source and target states</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">StateTransition</span><span class="p">(</span><span class="s">"?"</span><span class="p">,</span> <span class="s">"Transition_New"</span><span class="p">,</span> <span class="s">"New"</span><span class="p">));</span> <span class="c1">// ? means null or undefined state</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">StateTransition</span><span class="p">(</span><span class="s">"New"</span><span class="p">,</span> <span class="s">"Transition_Open"</span><span class="p">,</span> <span class="s">"Open"</span><span class="p">));</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">StateTransition</span><span class="p">(</span><span class="s">"Open"</span><span class="p">,</span> <span class="s">"Transition_Close"</span><span class="p">,</span> <span class="s">"Closed"</span><span class="p">));</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">StateTransition</span><span class="p">(</span><span class="s">"Closed"</span><span class="p">,</span> <span class="s">"Transition_ReOpen"</span><span class="p">,</span> <span class="s">"Open"</span><span class="p">));</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">StateTransition</span><span class="p">(</span><span class="s">"?"</span><span class="p">,</span> <span class="s">"Transition_Cancel"</span><span class="p">,</span> <span class="s">"Cancelled"</span><span class="p">));</span>
+
+            <span class="k">return</span> <span class="n">map</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ITransitionHandler</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;&gt;</span> <span class="nf">GetTransitionHandlersMap</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ITransitionHandler</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;&gt;</span> <span class="n">map</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">ITransitionHandler</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;&gt;();</span>
+            <span class="c1">// create a map of all available transitions and their respective transition handlers</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"Transition_New"</span><span class="p">,</span> <span class="k">new</span> <span class="nf">NewTransitionHandler</span><span class="p">());</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"Transition_Open"</span><span class="p">,</span> <span class="k">new</span> <span class="nf">OpenTransitionHandler</span><span class="p">());</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"Transition_Close"</span><span class="p">,</span> <span class="k">new</span> <span class="nf">CloseTransitionHandler</span><span class="p">());</span>
+            <span class="n">map</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"Transition_ReOpen"</span><span class="p">,</span> <span class="k">new</span> <span class="nf">OpenTransitionHandler</span><span class="p">());</span>
+
+            <span class="k">return</span> <span class="n">map</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">ICollection</span><span class="p">&lt;</span><span class="n">ServiceTicketState</span><span class="p">&gt;</span> <span class="nf">AllStates</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">List</span><span class="p">&lt;</span><span class="n">ServiceTicketState</span><span class="p">&gt;</span> <span class="n">states</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">ServiceTicketState</span><span class="p">&gt;();</span>
+            <span class="c1">// create a list of all possible states</span>
+            <span class="n">states</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">ServiceTicketState</span><span class="p">()</span> <span class="p">{</span> <span class="n">Code</span> <span class="p">=</span> <span class="s">"New"</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">"New Ticket"</span> <span class="p">});</span>
+            <span class="n">states</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">ServiceTicketState</span><span class="p">()</span> <span class="p">{</span> <span class="n">Code</span> <span class="p">=</span> <span class="s">"Open"</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">"Ticket Open"</span> <span class="p">});</span>
+            <span class="n">states</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">ServiceTicketState</span><span class="p">()</span> <span class="p">{</span> <span class="n">Code</span> <span class="p">=</span> <span class="s">"Closed"</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">"Ticket Closed"</span> <span class="p">});</span>
+            <span class="n">states</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">ServiceTicketState</span><span class="p">()</span> <span class="p">{</span> <span class="n">Code</span> <span class="p">=</span> <span class="s">"Cancelled"</span><span class="p">,</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">"Ticket Cancelled"</span> <span class="p">});</span>
+
+            <span class="k">return</span> <span class="n">states</span><span class="p">;</span>
+        <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>Now <code>ServiceTicket</code> entity can be transitioned through state machine. Create an instance of <code>StateMachine</code> as follows.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="n">IStateMachineContext</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ExampleStateMachineContext</span><span class="p">();</span>
+            <span class="n">StateMachine</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;</span> <span class="n">StateMachine</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StateMachine</span><span class="p">&lt;</span><span class="n">ServiceTicket</span><span class="p">,</span> <span class="n">ServiceTicketState</span><span class="p">&gt;(</span><span class="n">context</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>And request a transition as shown below.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            <span class="n">ServiceTicket</span> <span class="n">serviceTicket</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ServiceTicket</span><span class="p">()</span>
+            <span class="p">{</span>
+                 <span class="n">Name</span> <span class="p">=</span> <span class="s">"An example service ticket"</span>
+            <span class="p">};</span>
+
+            <span class="n">StateMachine</span><span class="p">.</span><span class="nf">RequestTransition</span><span class="p">(</span><span class="n">serviceTicket</span><span class="p">,</span> <span class="s">"Transition_New"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>And thats it. Your state machine is ready to handle transitions on the Service Ticket example entity.</p>
+:ET

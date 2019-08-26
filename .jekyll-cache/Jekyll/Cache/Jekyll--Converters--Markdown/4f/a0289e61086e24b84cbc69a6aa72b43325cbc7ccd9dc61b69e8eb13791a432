@@ -1,0 +1,122 @@
+I"/<p>Last week, I came across an interesting problem at work. The problem was to get read only users in a Django based application.</p>
+
+<p>But doing so was not very simple because there is no read only mode for users
+in Django. In order to solve this, I first started reading answers on stack
+overflow. Some of those links did pointed me to a correct route. Here, I will
+document the whole process so that it could help others and serve as a reminder
+for me as well.</p>
+
+<p>First of all, the whole system of authentication in any system originates from
+permissions. The basis permissions are. Read, Write, Execute. in Unix (chmod is
+used to set permissions).</p>
+
+<p>Django has a cool way of adding the permissions in the meta class. Let’s say we
+have a model class named Cars.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Cars</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Charfield</span><span class="p">()</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+
+  <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">permissions</span>  <span class="o">=</span> <span class="p">(</span>
+      <span class="p">(</span><span class="s">'readonly'</span><span class="p">,</span> <span class="s">'Can Read Only Cars'</span><span class="p">)</span>
+    <span class="p">)</span></code></pre></figure>
+
+<p>Just like this, Any permission could be added to the Model. Now in order to get
+these permissions in the database. You need to run migrate management command.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">python manage.py migrate</code></pre></figure>
+
+<p>So this just sets the background in place. The real job is getting this
+permissions to work.</p>
+
+<p>Now, I began to wonder what all things were required to develop this complete
+functionality ?</p>
+
+<p>The first thing that came to my mind naturally was to override templates and
+hack ground admin.py.</p>
+
+<p>So, I created a new class in Admin.py that was inherited from the admin class
+I was earlier using:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">Cars</span>
+
+
+<span class="k">class</span> <span class="nc">CarAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">date_hierarchy</span> <span class="o">=</span> <span class="s">'date'</span>
+    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span><span class="s">'status'</span><span class="p">,</span> <span class="s">'event_instance'</span><span class="p">,)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="p">[</span><span class="s">'accept'</span><span class="p">,</span> <span class="s">'reject'</span><span class="p">,</span> <span class="s">'pending'</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">ReadonlyCarAdmin</span><span class="p">(</span><span class="n">CarAdmin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">admin_site</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">(</span><span class="n">ReadonlyCarAdmin</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">admin_site</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="k">def</span> <span class="nf">has_delete_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'car.readonly'</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">has_add_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'car.readonly'</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span>
+      <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+     <span class="k">def</span> <span class="nf">has_change_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">()</span> <span class="c1"># make sure to remove caching.
+</span>            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'car.readonly'</span><span class="p">):</span>
+            <span class="c1"># make the fields readonly for only users with readonly permissions.
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">readonly_fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">auto_created</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+
+     <span class="k">def</span> <span class="nf">get_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">actions</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ReadOnlyCarAdmin</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_actions</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="s">'car.readonly'</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="c1"># This ensures that that user doesn't not have any actions
+</span>            <span class="k">if</span> <span class="s">'delete_selected'</span> <span class="ow">in</span> <span class="n">actions</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">actions</span><span class="p">[</span><span class="s">'delete_selected'</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">actions</span><span class="p">[</span><span class="s">'accept'</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">actions</span><span class="p">[</span><span class="s">'reject'</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">actions</span><span class="p">[</span><span class="s">'pending'</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">actions</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">actions</span>
+
+
+<span class="n">admin_site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Car</span><span class="p">,</span> <span class="n">ReadonlyCarAdmin</span><span class="p">)</span></code></pre></figure>
+
+<p>Okay, so now we have a robust system in place to ensure whichever user has
+readonly permission on Cars Model would only be able to see the model data in
+Readonly mode.</p>
+
+<p>But this is not it. Here is the part where templates are overridden.</p>
+
+<p>First of all save and cancel button on buttom needs to go as we don’t need
+them.</p>
+
+<p>For that, create a new template in templates folder.The templates name is ` change_form.html<code class="highlighter-rouge">.
+Hence the full pathname is </code> carapp/templates/admin/change_form.html`.</p>
+
+<p>Copy the content from the default django template (/admin/change_form.html) in django project
+add replace this content with this gist:</p>
+
+<script src="https://gist.github.com/vinitkumar/48a9cd0c2e35e033659c.js"></script>
+
+<p>This will ensure that the selected user with this readonly only permissions won’t be able
+get the submit button on his admin page.</p>
+
+<p>Now, you have a fully functioning Django Admin with readonly mode. The main effort was to make it
+very easy to use and ensure that this feature could run across future versions.</p>
+
+<p>Hope this post help anyone else who has to implement something similar.</p>
+
+:ET

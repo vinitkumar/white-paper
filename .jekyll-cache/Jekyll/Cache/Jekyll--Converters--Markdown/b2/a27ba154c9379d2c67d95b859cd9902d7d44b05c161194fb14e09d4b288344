@@ -1,0 +1,40 @@
+I"Æ
+<p>Sometimes we keep looking for resources everywhere only to realize that we had
+it with us the whole time. Situation like these might arise when you have too
+many choices. I too faced these moments before. It is a tough situation indeed.</p>
+
+<p>I think one should develop art of learning before trying to learn a lot of
+things at once. Once you know how to learn and improve how to learn through
+constant iterations. It becomes easy thereafter.</p>
+
+<p>I changed quite a lot as a developer and person. Last year. I was all about
+learning new technologies, getting super aware about all the frameworks that
+are popular. Now, I donâ€™t even bother checking these. My goals are now mostly
+on low level decisions or high level architecture. All these frameworks and
+likes are just tooling. Nothing less nothing more. The main focus should be on
+problem solving. And problem solving at its heart is always
+Language/Platform/Frameworks agnostic.</p>
+
+<p>Reading books and theory is also very important at this stage. Consider it as
+like sitting on the shoulder of giants. Of course practise is very important as
+well but making sure there is a good balance between these two really pays off.</p>
+
+<p>I love reading books. I have bought quite some books in the past 11 months. I
+have so much to read and learn from these gems. I have done good progress in
+completing some of these. Hoping to cover more in the near future.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">Celery</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>  <span class="c1"># noqa
+</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s">'DumpGood'</span><span class="p">)</span>
+
+<span class="c1"># Using a string here means the worker will not have to
+# pickle the object when using Windows.
+</span><span class="n">app</span><span class="o">.</span><span class="n">config_from_object</span><span class="p">(</span><span class="s">'django.conf:settings'</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">INSTALLED_APPS</span><span class="p">)</span></code></pre></figure>
+
+:ET
