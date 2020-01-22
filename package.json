@@ -8,7 +8,8 @@
   "devDependencies": {
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-rtlcss": "^2.0.1"
+    "grunt-rtlcss": "^2.0.1",
+    "clean-css": ">=4.1.11"
   },
   "dependencies": {
     "grunt": "^1.0.1",
