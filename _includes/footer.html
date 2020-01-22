@@ -40,4 +40,6 @@
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-<span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}</span>
+<div class="pagination">
+  <span class="copyright" style="float: left; font-size: 19px;">&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}</span>
+</div>
