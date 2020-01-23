@@ -8,12 +8,12 @@
   {% if site.owner.email %}
     <a href="mailto:{{ site.owner.email }}" class="social-media-icons"><i class="fa fa-2x fa-envelope-square" aria-hidden="true"></i></a>
   {% endif %}
-  {% if site.owner.twitter %}  
+  {% if site.owner.twitter %}
     <a href="https://twitter.com/{{ site.owner.twitter }}" class="social-media-icons"><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a>
   {% endif %}
-  {% if site.owner.github %}  
+  {% if site.owner.github %}
     <a href="{{ site.owner.github }}" class="social-media-icons"><i class="fa fa-2x fa-github-square" aria-hidden="true"></i></a>
-  {% endif %}  
+  {% endif %}
   {% if paginator.next_page %}
     <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px;"></span></a>
   {% else %}
@@ -41,5 +41,5 @@
   })();
 </script>
 <div class="footer-pagination">
-  <span class="copyright" style="float: left; font-size: 19px; width: 100%; margin-top: 6px;">&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}</span>
+  <span class="copyright" style="float: left; font-size: 19px; width: 100%; margin-top: 6px;">&copy; {{ site.time | date: '%Y' }}, {{ site.owner.name }}</span>
 </div>
