@@ -2,10 +2,6 @@
 
 **White Paper** is a theme for Jekyll. It is made keeping content in focus and is best for writers/developers who also like to share code with their essays.
 
-It is also one of the fastest jekyll theme out there with a 100 score on pagespeed insights. 
-
-![pagespeed-insights](https://cldup.com/ekLMXi9-Hq.png)
-
 ## Create blog posts
 
 `jekyll-compose` gem is now installed with jekyll so now creating a new post is as easy as running this simple command
@@ -26,24 +22,19 @@ Untracked files:
   _posts/2019-03-06-tooling-considered-harmful.md
 ```
 
-## Note: Dark Paper out now
-
-> Inspired by MacOS dark mode, a new dark theme is out now. Check out [Dark Paper github](https://github.com/vinitkumar/dark-paper) and it's live demo here: [dark paper website](https://vinitkumar.me/dark-paper)
-
 ## White Paper in Action
 
 #### Blog Page
 
-![home](https://cldup.com/_wW4XyaFRp.png)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_shield)
+![home](./listview.png)
 
 #### Detail Page
 
-![post detail](https://cldup.com/4JownXxgqT-3000x3000.png)
+![post detail](./detailview.png)
 
 #### About Page
 
-![about](https://cldup.com/oIZoELPfCO.png)
+![about](./about.png)
 
 
 ## How to use White Paper
@@ -164,14 +155,12 @@ Support this project with your organization. Your logo will show up here with a 
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
 
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_large)
-
 ## Version
-* Version 4.0.0
+* Version 5.0.0
 
 ## Contact
 #### Developer
 
 * Homepage: http://vinitkumar.me
-* e-mail: vinit1414.08@bitmesra.ac.in
+* e-mail: mail@vinitkumar.me
 * Twitter: [@vinitkme](https://twitter.com/vinitkme "vinitkme on twitter")
