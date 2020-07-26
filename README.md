@@ -34,7 +34,7 @@ Untracked files:
 
 #### About Page
 
-![about](https://cldup.com/oIZoELPfCO.png)
+![about](./about.png)
 
 
 ## How to use White Paper
@@ -155,14 +155,12 @@ Support this project with your organization. Your logo will show up here with a 
 * see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
 
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvinitkumar%2Fwhite-paper?ref=badge_large)
-
 ## Version
-* Version 4.0.0
+* Version 5.0.0
 
 ## Contact
 #### Developer
 
 * Homepage: http://vinitkumar.me
-* e-mail: vinit1414.08@bitmesra.ac.in
+* e-mail: mail@vinitkumar.me
 * Twitter: [@vinitkme](https://twitter.com/vinitkme "vinitkme on twitter")
