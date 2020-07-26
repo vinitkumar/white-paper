@@ -44,18 +44,16 @@ p {
 }
 
 a.top-link {
-  color: black;
+  color: #101010;
   margin-top: 40px;
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 400;
   text-decoration: none;
 }
 
 a.top-link:hover {
-  margin-top: 40px;
-  color: black;
-  font-size: 60px;
   text-decoration: none;
+  color: #505050;
 }
 
 strong {
@@ -540,6 +538,10 @@ code.html span.doctype {
 
 .bottom-icon:hover {
   color: orange;
+}
+
+.container h2 {
+  font-weight: 400;
 }
 
 .highlight .hll { background-color: #ffffcc }
