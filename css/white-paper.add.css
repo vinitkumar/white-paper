@@ -31,7 +31,8 @@ a img{ border:none; }
 ----------------------------------------------------------------------------*/
 
 body {
-  font-family: 'Zilla Slab', serif;
+  font-family: 'Public Sans', sans-serif;
+  background-color: #f8f8f8;
   font-size: 14.5px;
   color: #333;
   text-shadow: 0 1px 0 rgba(255,255,255,1.0);
@@ -46,7 +47,7 @@ a.top-link {
   color: black;
   margin-top: 40px;
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -134,10 +135,10 @@ ul.nav li {
   }
 }
 ul.nav li a {
-  color: deepskyblue;
+  color: #303030;
   margin-right: 10px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
 }
 ul.nav li a:hover {
   color: #2382c8;
@@ -181,7 +182,8 @@ ul.nav li.logo a {
 }
 
 .listing .post h2 {
-  margin: 0 0 -20px 0;
+  margin: 0 0 -12px 0;
+  font-weight: 400;
   font-size: 30px;
   border: none;
 }
@@ -213,11 +215,11 @@ ul.nav li.logo a {
   font-weight: lighter;
 }
 .listing .post.other h2 a {
-  color: deepskyblue;
+  color: #303030;
 }
 
 .listing .post.other h2 a:hover {
-  color: #2382c8;
+  color: #909090;
 }
 .listing .post.other p:last-child {
   margin-bottom: 0;
@@ -443,6 +445,7 @@ p > a > img {
 
 .post-date {
   font-size: 14px;
+  margin-top: 18px;
 }
 
 @media only screen and (max-width: 520px) {
@@ -533,6 +536,10 @@ code.html span.doctype {
 /* @end */
 .user-avatar {
   border-radius: 12px;
+}
+
+.bottom-icon:hover {
+  color: orange;
 }
 
 .highlight .hll { background-color: #ffffcc }

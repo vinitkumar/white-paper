@@ -14,20 +14,20 @@
   {% if site.owner.github %}
     <a href="{{ site.owner.github }}" class="social-media-icons"><i class="fa fa-2x fa-github-square" aria-hidden="true"></i></a>
   {% endif %}
-  
+
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a href="{{site.url}}/" class="newer"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px;"></span></a>
+      <a href="{{site.url}}/" class="newer"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px; font-size: 32px;"></span></a>
     {% else %}
-      <a href="{{site.url}}/page{{paginator.previous_page}}" class="newer"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px;"></span></a>
+      <a href="{{site.url}}/page{{paginator.previous_page}}" class="newer"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px; font-size: 32px;"></span></a>
     {% endif %}
   {% else %}
-    <span class="previous"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px;"></span></span>
+    <span class="previous"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px; font-size: 32px;"></span></span>
     {% endif %}
     {% if paginator.next_page %}
-    <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span class="mega-octicon octicon-playback-{% if site.rtl %}rewind{% else %}fast-forward{% endif %}" style="min-width: 32px;"></span></a>
+    <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span class="bottom-icon mega-octicon octicon-playback-{% if site.rtl %}rewind{% else %}fast-forward{% endif %}" style="min-width: 32px; font-size: 32px;"></span></a>
     {% else %}
-    <span class="next"><span class="mega-octicon octicon-playback-{% if site.rtl %}rewind{% else %}fast-forward{% endif %}" style="min-width: 32px;"></span></span>
+    <span class="next"><span class="bottom-icon mega-octicon octicon-playback-{% if site.rtl %}rewind{% else %}fast-forward{% endif %}" style="min-width: 32px; font-size: 32px;"></span></span>
     {% endif %}
 </div>
 {%  endif %}
@@ -42,5 +42,5 @@
   })();
 </script>
 <div class="footer-pagination">
-  <span class="copyright" style="float: left; font-size: 19px; width: 100%; margin-top: 6px;">&copy; {{ site.time | date: '%Y' }}, {{ site.owner.name }}</span>
+  <span class="copyright" style="float: left; font-size: 16px; width: 100%; margin-top: 6px;">&copy; {{ site.time | date: '%Y' }}, {{ site.owner.name }}</span>
 </div>
