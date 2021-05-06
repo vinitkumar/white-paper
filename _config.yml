@@ -11,14 +11,14 @@ highlighter: rouge
 
 plugins: ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed']
 
-paginate: 4
+paginate: 3
 
 logo:             logo.png
 disqus_shortname:
 
 rtl: false
 owner:
-  name:           crayfish-ghost powerd by jekyll and whitepaper
+  name:           Crayfish-Ghost. Powered by <a href="https://jekyllrb.com" rel="nofollow" target="_blank" rel="noopener">jekyll</a> & <a href="https://github.com/vinitkumar/white-paper" rel="nofollow" target="_blank" rel="noopener">white-paper</a>.
   avatar:         #"https://avatars1.githubusercontent.com/u/537678?s=240&v=4"
   email:          #"vinit1414.08@bitmesra.ac.in"
   # Social networking links used in footer. Update and remove as you like.

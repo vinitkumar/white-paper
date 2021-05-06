@@ -2,17 +2,12 @@
 layout: default
 ---
 <h2>{{ page.title }}</h2>
-<p class="post-date">{{ page.date | date_to_string }}</p>
+<p class="post-date" style="margin-top:-30px;">{{ page.date | date: "%Y/%m/%d (%a)" }}</p>
 
 <div class="post">
 {{ content }}
 </div>
 
-<a class="twitter-share-button"
-   href="https://twitter.com/intent/tweet?text={{page.title}}"
-   data-hashtags="{{ page.tags | join: ',' }}"
-   data-via="{{ site.owner.twitter_username }}"
-   data-size="large">Tweet</a>
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
