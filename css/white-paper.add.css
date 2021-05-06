@@ -73,14 +73,24 @@ a:hover {
 }
 
 hr {
+  margin: 20px auto 25px auto;
+  text-align: center;
+  /*letter-spacing: 3px;*/
+  /*font-size: 20px;*/
+  color: #666;
+  border: solid;
+  border-width:0.5px;
+}
+
+.post hr {
   margin: 20px 0 25px 0;
   text-align: center;
   letter-spacing: 3px;
-  font-size: 20px;
-  color: #ddd;
+  font-size: 40px;
+  color: #444;
   border: none;
 }
-hr:before {
+.post hr:before {
   content: '\2022 \2022 \2022 \2022 \2022';
 }
 
@@ -185,7 +195,7 @@ ul.nav li.logo a {
 .listing .post h2 {
   margin: 0 0 -12px 0;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 50px;
   border: none;
 }
 
@@ -193,12 +203,12 @@ ul.nav li.logo a {
   /* color: #2382c8; */
   color: deepskyblue;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 500;
 }
 
 .listing .post h2 i {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .listing .post .post-summary {
@@ -303,7 +313,7 @@ h1.link .desc {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 50px;
   color: #DDD
 }
 h3 {
