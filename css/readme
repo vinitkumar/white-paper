@@ -1,0 +1,4 @@
+How to change the css config.
+
+1. edit base.css
+2. exec "grunt" command
