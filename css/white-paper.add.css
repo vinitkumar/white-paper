@@ -31,7 +31,8 @@ a img{ border:none; }
 ----------------------------------------------------------------------------*/
 
 body {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Shippori Mincho B1', sans-serif;
+/*  font-family: 'Public Sans', sans-serif;*/
 /*  background-color: #f8f8f8;*/
   background-color: #202020;
   font-size: 14.5px;
@@ -62,7 +63,8 @@ strong {
 }
 
 a {
-  color: deepskyblue;
+  /*color: deepskyblue;*/
+  color: #DDD;
   text-decoration: none;
 }
 a:hover {
