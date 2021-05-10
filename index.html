@@ -3,7 +3,8 @@ layout: default
 title: A guide to your digital life
 ---
 <div class="listing">
-    {% for post in paginator.posts %}
+  {% for post in paginator.posts %}
+    <hr>
     <div class="post other link">
       <h2></span> <a href="{{site.url}}{{post.url}}">{{ post.title }}</a></h2>
       <p class="post-date">{{ post.date | date: "%Y/%m/%d (%a)" }}</p>
