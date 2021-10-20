@@ -6,10 +6,9 @@ title: About
 
 <img class="user-avatar" src="{{ site.owner.avatar }}">
 
-White Paper is a very clean theme and used by users around the globe.
-It aims to be clean and really fast. Jekyll is a pretty neat platform for generating websites and applications. The effort required to setup this blog is minimal but the effect is visible from the day one.
+I am a Master's student in Computational Neuroscience at the Institute of Neuroinformatics at ETH Zurich & University of Zurich.
 
-If you are visiting this page, it means you have configured it right and all you need to do now is to start blogging.
+In case you are curious about the things I do or have any questions, please feel free to contact me!
 
 <div class="pagination">
   {% if site.owner.linkedin %}
