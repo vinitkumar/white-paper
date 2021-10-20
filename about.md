@@ -2,7 +2,7 @@
 layout: default
 title: About
 ---
-## About {{ site.name }}
+## About
 
 <img class="user-avatar" src="{{ site.owner.avatar }}">
 
