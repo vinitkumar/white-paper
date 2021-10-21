@@ -4,7 +4,7 @@ title: About
 ---
 ## About
 
-<img class="user-avatar" width="30%" src="{{ site.owner.avatar }}">
+<img class="user-avatar" width="20%" src="{{ site.owner.avatar }}">
 
 I am a Master's student in Computational Neuroscience at the Institute of Neuroinformatics at ETH Zurich & University of Zurich.
 
