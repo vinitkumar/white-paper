@@ -1,13 +1,12 @@
 name: Riyoth's Blog
 description: >
-    This is my blog, I  write about my project, experiment and idea.
+  This is my blog, I  write about my project, experiment and idea.
 about: | 
-  I'm a sysadmin/network admin with a strong desire to automate all the thing. My favorite tool to automate stuff Python and Ansible. Most of the time I work with Debian linux, Cisco, Juniper and Fortinet equipement.
-  
-  I've started this blog to write about my project and experimentation. I will cover my work at [DreamHack Canada](http://dreamhack.ca), [CS Games](https://csgames.org) and other personnal project.
+  I’m a software developer with a strong background in DevOps,  networking, and cloud computing. I love solving real problems for real people. In the past, I’ve used Python, Django, and Flask to build small and large web applications. Tooling for the development team is a particular interest of mine. Ensuring fast feedback, rapid deployment, and rollback is the best way to deliver great software.
+
+  I’ve started this blog to write about my project and experimentation. I will cover my work at [DreamHack Canada](http://dreamhack.ca), [CS Games](https://csgames.org) and other personal projects.
 
   Feel free to contact me by email or any of the following social media.
-    
 
 master_repo: false
 url: "http://riyoth.github.io"
@@ -35,7 +34,7 @@ owner:
   google_plus:
 
 # Analytics and webmaster tools stuff goes here
-google_analytics: UA-127442593-1
+google_analytics: G-KB9Q4N5BSZ
 google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:
