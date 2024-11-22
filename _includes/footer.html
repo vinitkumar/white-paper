@@ -1,46 +1,55 @@
-
 {% if paginator %}
 <!-- Pagination links -->
 <div class="pagination">
   {% if site.owner.linkedin %}
-    <a href="{{ site.owner.linkedin }}" class="social-media-icons"><i class="fa fa-2x fa-linkedin-square" aria-hidden="true"></i></a>
+  <a href="{{ site.owner.linkedin }}" class="social-media-icons"><i class="fa fa-2x fa-linkedin-square"
+      aria-hidden="true"></i></a>
   {% endif %}
   {% if site.owner.email %}
-    <a href="mailto:{{ site.owner.email }}" class="social-media-icons"><i class="fa fa-2x fa-envelope-square" aria-hidden="true"></i></a>
+  <a href="mailto:{{ site.owner.email }}" class="social-media-icons"><i class="fa fa-2x fa-envelope-square"
+      aria-hidden="true"></i></a>
   {% endif %}
   {% if site.owner.twitter %}
-    <a href="https://twitter.com/{{ site.owner.twitter }}" class="social-media-icons"><i class="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a>
+  <a href="https://twitter.com/{{ site.owner.twitter }}" class="social-media-icons"><i class="fa-brands fa-2x fa-square-x-twitter"></i></i></a>
   {% endif %}
   {% if site.owner.github %}
-    <a href="{{ site.owner.github }}" class="social-media-icons"><i class="fa fa-2x fa-github-square" aria-hidden="true"></i></a>
+  <a href="{{ site.owner.github }}" class="social-media-icons"><i class="fa-brands fa-2x fa-square-github"></i></a>
   {% endif %}
-
-  {% if paginator.previous_page %}
+  <!-- Pagination, pull to the right -->
+  <div style="float: right;">
+    {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a href="{{site.url}}/" class="newer"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px; font-size: 32px;"></span></a>
+    <a href="{{site.url}}/" class="newer"><span style="min-width: 32px; font-size: 2em;"><i
+          class="fa-solid fa-backward"></i></span></a>
     {% else %}
-      <a href="{{site.url}}/page{{paginator.previous_page}}" class="newer"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px; font-size: 32px;"></span></a>
+    <a href="{{site.url}}/page{{paginator.previous_page}}" class="newer"><span
+        style="min-width: 32px; font-size: 2em;"><i class="fa-solid fa-forward"></i></span></a>
     {% endif %}
-  {% else %}
-    <span class="previous"><span class="mega-octicon octicon-playback-{% if site.rtl %}fast-forward{% else %}rewind{% endif %}" style="min-width: 32px; font-size: 32px;"></span></span>
+    {% else %}
+    <span class="previous"><span style="min-width: 32px; font-size: 2em;"><i
+          class="fa-solid fa-backward"></i></span></span>
     {% endif %}
     {% if paginator.next_page %}
-    <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span class="bottom-icon mega-octicon octicon-playback-{% if site.rtl %}rewind{% else %}fast-forward{% endif %}" style="min-width: 32px; font-size: 32px;"></span></a>
+    <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span style="min-width: 32px; font-size: 2em;"><i
+          class="fa-solid fa-forward"></i></span></a>
     {% else %}
-    <span class="next"><span class="bottom-icon mega-octicon octicon-playback-{% if site.rtl %}rewind{% else %}fast-forward{% endif %}" style="min-width: 32px; font-size: 32px;"></span></span>
+    <span class="next"><span style="min-width: 32px; font-size: 2em;"><i class="fa-solid fa-forward"></i></span></span>
     {% endif %}
+  </div>
+
 </div>
-{%  endif %}
+{% endif %}
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', '{{site.google_analytics}}']);
   _gaq.push(['_trackPageview']);
-  (function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
 <div class="footer-pagination">
-  <span class="copyright" style="float: left; font-size: 16px; width: 100%; margin-top: 6px;">&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}</span>
+  <span class="copyright" style="float: left; font-size: 16px; width: 100%; margin-top: 12px; margin-bottom: 12px;">&copy; {{ site.time |
+    date: '%Y' }} {{ site.owner.name }}</span>
 </div>

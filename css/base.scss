@@ -30,8 +30,10 @@ a img{ border:none; }
   Main Layout
 ----------------------------------------------------------------------------*/
 
+
+
 body {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   background-color: #f8f8f8;
   font-size: 14.5px;
   color: #333;
@@ -40,14 +42,14 @@ body {
 
 p {
   color: #222;
-  font-size: 19px;
+  font-size: 14px;
 }
 
 a.top-link {
   color: #101010;
   margin-top: 40px;
-  font-size: 70px;
-  font-weight: 400;
+  font-size: 72px;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -137,6 +139,7 @@ ul.nav li a {
   margin-right: 10px;
   text-decoration: none;
   font-weight: 400;
+  margin-right: 12px;
 }
 ul.nav li a:hover {
   color: #2382c8;
@@ -190,8 +193,8 @@ ul.nav li.logo a {
   /* color: #2382c8; */
   color: deepskyblue;
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .listing .post h2 i {
@@ -442,7 +445,7 @@ p > a > img {
 }
 
 .post-date {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 18px;
 }
 
@@ -541,5 +544,6 @@ code.html span.doctype {
 }
 
 .container h2 {
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 600;
 }
