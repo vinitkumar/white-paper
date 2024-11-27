@@ -128,14 +128,6 @@ concat: {
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
 <a href="https://github.com/vinitkumar/white-paper/graphs/contributors"><img src="https://opencollective.com/whitepaper/contributors.svg?width=890&button=false" /></a>
 
-### Financial Contributors
-
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/whitepaper/contribute)]
-
-#### Individuals
-
-<a href="https://opencollective.com/whitepaper"><img src="https://opencollective.com/whitepaper/individuals.svg?width=890"></a>
-
 #### Organizations
 
 Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/whitepaper/contribute)]
