@@ -51,9 +51,9 @@ Also, change this line in head.html [link](https://github.com/vinitkumar/white-p
 
 ```html
 <!-- From this -->
-<link rel="stylesheet" href=" {{ '/css/main.min.css' | relative_url }}" type="text/css" />
+<link rel="stylesheet" href=" {{ '/dist/css/main.min.css' | relative_url }}" type="text/css" />
 <!-- To this -->
-<link rel="stylesheet" href=" {{ '/css/main.min.css' | absolute_url }}" type="text/css" />
+<link rel="stylesheet" href=" {{ '/dist/css/main.min.css' | absolute_url }}" type="text/css" />
 
 ```
 
@@ -80,16 +80,16 @@ git clone git@github.com:vinitkumar/white-paper.git
 gem install jekyll bundler
 
 # If you have node installed.
-npm install
-sudo npm install -g grunt-cli  #to get the task runner for grunt.
+yarn install
 bundle install
-jekyll serve
+yarn build
+bundle exec jekyll serve
 
 # on running the serve script, the site will be live on
 http://127.0.0.1:4000
 ```
-This theme uses grunt to concat & minify the css for best performance. In order to prepare the css build. Run `grunt`
-It will create a main.min.css file in the css folder.
+This theme uses Vite to bundle and minify the CSS, then `rtlcss` to generate the right-to-left stylesheet. In order to prepare the CSS build, run `yarn build`.
+It will create `dist/css/main.min.css` and `dist/css/main.min.rtl.css`.
 
 ### Switch Syntax Highlighting.
 
@@ -106,19 +106,11 @@ This theme also provides syntax highlighting in different theme. Inside css fold
 
 ```
 
-Now in the gruntfiles.js
+Now in `css/main.scss`
 
-```js
-concat: {
-  dist: {
-    src: [
-      'css/base.css',
-      'css/sytax/emacs.css', // change this to another theme if you prefer, like vim.css and run grunt
-      'css/octicons.css'
-    ],
-    dest: 'css/<%= pkg.name %>.add.css'
-  }
-}
+```scss
+@use 'base';
+@use 'syntax/emacs'; // change this to another theme if you prefer, like vim.css, and run yarn build
 ```
 
 ## Contributors
