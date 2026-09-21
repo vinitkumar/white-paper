@@ -1,15 +1,11 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.4"
-gem "jekyll-paginate"
-gem "jekyll-gist"
-gem 'jekyll-feed'
-gem "json"
-gem "rouge"
-gem "csv"
-gem "base64"
-gem "bigdecimal"
-gem "sassc"
-gem "liquid"
-gem "octokit"
-gem 'jekyll-compose', group: [:jekyll_plugins]
+ruby "~> 4.0.0"
+
+gem "jekyll", "~> 4.4.1"
+gem "faraday-retry", "~> 2.4.0"
+gem "jekyll-feed", "~> 0.17.0"
+gem "jekyll-gist", "~> 1.5.0"
+gem "jekyll-paginate", "~> 1.1.0"
+
+gem "jekyll-compose", "~> 0.12.0", group: :jekyll_plugins

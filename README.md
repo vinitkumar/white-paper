@@ -71,23 +71,20 @@ Also, change all other fields in the `_config.yml` file to your choice.
 
 ### Local Development
 
-This theme requires you to install couple of tools first to setup jekyll locally.
+Install Ruby 4.0 and Node.js 24, then run:
 
-```$
+```sh
 git clone git@github.com:vinitkumar/white-paper.git
-
-# If you have ruby installed.
-gem install jekyll bundler
-
-# If you have node installed.
-yarn install
+cd white-paper
+gem install bundler -v 4.0.21
 bundle install
+yarn install --frozen-lockfile
 yarn build
 bundle exec jekyll serve
-
-# on running the serve script, the site will be live on
-http://127.0.0.1:4000
 ```
+
+The site will be available at <http://127.0.0.1:4000>.
+
 This theme uses Vite to bundle and minify the CSS, then `rtlcss` to generate the right-to-left stylesheet. In order to prepare the CSS build, run `yarn build`.
 It will create `dist/css/main.min.css` and `dist/css/main.min.rtl.css`.
 
@@ -140,7 +137,7 @@ Support this project with your organization. Your logo will show up here with a 
 
 
 ## Version
-* Version 5.0.0
+* Version 7.0.0
 
 ## Contact
 #### Developer

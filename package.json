@@ -8,11 +8,11 @@
     "vite": "^8.0.9"
   },
   "scripts": {
-    "build": "vite build && rtlcss dist/css/main.min.css dist/css/main.min.rtl.css",
+    "build": "vite build && rtlcss --config rtlcss.config.json dist/css/main.min.css dist/css/main.min.rtl.css",
     "dev": "vite"
   },
   "resolutions": {
-    "nanoid": "^3.3.8",
+    "nanoid": "^3.3.18",
     "picomatch": "^2.3.2"
   }
 }
