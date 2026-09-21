@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Widen the content area for modern desktop displays.
+
 ### Fixed
 
 - Remove stacked layout spacing between the header and first post.
