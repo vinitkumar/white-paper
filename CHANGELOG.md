@@ -5,6 +5,13 @@ All notable changes to White Paper are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Remove stacked layout spacing between the header and first post.
+- Separate pagination controls and correct the newer-post direction.
+
 ## [7.0.0] - 2026-09-22
 
 ### Added

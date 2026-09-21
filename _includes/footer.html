@@ -15,27 +15,22 @@
   {% if site.owner.github %}
   <a href="{{ site.owner.github }}" class="social-media-icons"><i class="fa-brands fa-2x fa-square-github"></i></a>
   {% endif %}
-  <!-- Pagination, pull to the right -->
-  <div style="float: right;">
+  <nav class="pagination-links" aria-label="Pagination">
     {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-    <a href="{{site.url}}/" class="newer"><span style="min-width: 32px; font-size: 2em;"><i
-          class="fa-solid fa-backward"></i></span></a>
+      {% if paginator.page == 2 %}
+      <a href="{{site.url}}/" class="newer" aria-label="Newer posts"><i class="fa-solid fa-backward"></i></a>
+      {% else %}
+      <a href="{{site.url}}/page{{paginator.previous_page}}" class="newer" aria-label="Newer posts"><i class="fa-solid fa-backward"></i></a>
+      {% endif %}
     {% else %}
-    <a href="{{site.url}}/page{{paginator.previous_page}}" class="newer"><span
-        style="min-width: 32px; font-size: 2em;"><i class="fa-solid fa-forward"></i></span></a>
-    {% endif %}
-    {% else %}
-    <span class="previous"><span style="min-width: 32px; font-size: 2em;"><i
-          class="fa-solid fa-backward"></i></span></span>
+    <span class="previous" aria-hidden="true"><i class="fa-solid fa-backward"></i></span>
     {% endif %}
     {% if paginator.next_page %}
-    <a href="{{site.url}}/page{{paginator.next_page}}" class="older"><span style="min-width: 32px; font-size: 2em;"><i
-          class="fa-solid fa-forward"></i></span></a>
+    <a href="{{site.url}}/page{{paginator.next_page}}" class="older" aria-label="Older posts"><i class="fa-solid fa-forward"></i></a>
     {% else %}
-    <span class="next"><span style="min-width: 32px; font-size: 2em;"><i class="fa-solid fa-forward"></i></span></span>
+    <span class="next" aria-hidden="true"><i class="fa-solid fa-forward"></i></span>
     {% endif %}
-  </div>
+  </nav>
 
 </div>
 {% endif %}

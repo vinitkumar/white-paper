@@ -171,7 +171,7 @@ ul.nav li a:hover {
 
 /* Home page entries are separated by whitespace, not cards or decoration. */
 .listing {
-  margin-block: clamp(3rem, 8vw, 5rem);
+  margin-block: 0 clamp(3rem, 8vw, 5rem);
 }
 
 .listing .post {
@@ -217,8 +217,8 @@ p.date {
 }
 
 /* Article typography favors a narrow measure and clear hierarchy. */
-body > .container {
-  padding-block: clamp(2.5rem, 7vw, 4.5rem);
+.main-content {
+  padding-block: clamp(2.5rem, 5vw, 3rem);
 }
 
 h1,
@@ -382,6 +382,27 @@ pre code {
   color: var(--ink-soft);
 }
 
+.pagination-links {
+  display: flex;
+  float: inline-end;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pagination-links a,
+.pagination-links > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.pagination-links > span {
+  opacity: 0.35;
+}
+
 .social-media-icons {
   float: inline-start;
   margin-inline-end: 0.65rem;
@@ -432,7 +453,7 @@ pre code {
     gap: 0.5rem 1rem;
   }
 
-  body > .container {
+  .main-content {
     padding-top: 2.5rem;
   }
 
